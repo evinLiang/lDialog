@@ -1,0 +1,28 @@
+.lDialog {
+	position: fixed;
+	z-index: 999999;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+/*--========= S lDialog-toast 提示框 =========--*/
+.lDialog-toast {
+	background: rgba(0,0,0,0.7);
+	border-radius: 5px;
+	font-size: 13px;
+	color: #fff;
+	min-width: 120px;
+	max-width: 200px;
+	padding: 10px 0px;
+	text-align: center;
+	display: none;
+}
+/*-- lDialog-toast主题色 --*/
+.lDialog-toast.default { background: rgba(0,0,0,0.7); }
+.lDialog-toast.primary { background: #00d1b2; }
+.lDialog-toast.link { background: #3273dc; }
+.lDialog-toast.success { background: #23d160; }
+.lDialog-toast.info { background: #209cee; }
+.lDialog-toast.warning { background: #ffdd57; color: rgba(0,0,0,0.7) }
+.lDialog-toast.danger { background: #ff3860; }
+/*--========= S lDialog-toast 提示框 =========--*/

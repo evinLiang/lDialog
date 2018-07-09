@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./lDialog.css">
+    <title>lDialog</title>
+  </head>
+  <body>
+    <div id="app">
+    	<button id="toast">toast</button>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./lDialog.js"></script>
+    <script>
+    	$("#toast").click(function() {
+
+    		//显示toast
+    		$.lDialog.toast({
+    			content:'抱歉，密码错误',
+    			duration: 2000,
+    			theme:'default'
+    		});
+    	});
+    </script>
+  </body>
+</html>
