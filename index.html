@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="./lDialog.css">
     <title>lDialog</title>
+    <style>
+        body { background: #eee; }
+    </style>
   </head>
   <body>
     <div id="app">
     	<button id="toast">toast</button>
+        <button id="iconToast">iconToast</button>
+        <button id="loadingToast">loadingToast</button>
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="./lDialog.js"></script>
@@ -19,9 +24,33 @@
     		$.lDialog.toast({
     			content:'抱歉，密码错误',
     			duration: 2000,
-    			theme:'default'
+    			theme:'danger'
     		});
     	});
+        $("#iconToast").click(function(event) {
+            
+            //显示iconTiast，类型有：success,error
+            $.lDialog.iconToast({
+                title: '错误',
+                icon: 'error',
+                theme:'default',
+                duration: 2000
+            })
+        });
+        $("#loadingToast").click(function(event) {
+            
+            //显示sLoadingToast
+            $.lDialog.sLoadingToast({
+                title: '加载',
+                theme:'primary'
+            })
+
+            //2秒后关闭LoadingToast
+            setTimeout(function(){
+                $.lDialog.hLoadingToast() //关闭sLoadingToast
+            },2000)
+        });
+
     </script>
   </body>
 </html>
