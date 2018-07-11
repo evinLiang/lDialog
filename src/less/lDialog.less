@@ -1,0 +1,78 @@
+@defaultBgColor:rgba(17,17,17,0.7);
+@primarytBgColor:rgba(0,209,178,0.7);
+@linkBgColor:rgba(50,115,220,0.7);
+@successBgColor:rgba(35,209,96,0.7);
+@infoBgColor:rgba(32,156,238,0.7);
+@warningBgColor:rgba(255,221,87,0.7); 
+@dangerBgColor:rgba(255,56,96,0.7);
+@warningColor:rgba(0,0,0,0.7);
+@borderRadius:5px;
+@toastWidth:120px;
+@toastMinHidth:120px;
+
+.lDialog {
+	position: fixed;
+	z-index: 999999;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.iconToast-text {margin: 0 0 15px; font-size: 13px;}
+/*-- lDialog主题色 --*/
+.lDialog.default { background: @defaultBgColor;  }
+.lDialog.primary { background: @primarytBgColor;  }
+.lDialog.link { background: @linkBgColor;  }
+.lDialog.success { background: @successBgColor; }
+.lDialog.info { background: @infoBgColor;  }
+.lDialog.warning { background: @warningBgColor; color: @warningColor;  }
+.lDialog.danger { background: @dangerBgColor;  }
+
+/*--========= S lDialog-toast 提示框 =========--*/
+.lDialog-toast {
+	background: @defaultBgColor;
+	border-radius: @borderRadius;
+	font-size: 13px;
+	color: #fff;
+	min-width: @toastWidth;
+	max-width: 200px;
+	padding: 10px 0px;
+	text-align: center;
+	display: none;
+}
+
+/*--========= S lDialog-iconToast icon提示框 =========--*/
+.lDialog-iconToast {
+	width: @toastWidth;
+	min-height: @toastMinHidth;
+	background: @defaultBgColor;
+    text-align: center;
+    border-radius: @borderRadius;
+    color: #FFFFFF;
+    display: none;
+}
+.lDialog-iconToast .iconToast-icon img { max-width: 100%; }
+.lDialog-iconToast .success {margin: 22px 0 0;}
+.lDialog-iconToast .success img {width: 53px;}
+.lDialog-iconToast .error {margin: 22px 0 0;}
+.lDialog-iconToast .error img {width: 53px;}
+
+/*--========= S lDialog-LoadingToast 加载提示框 =========--*/
+.lDialog-LoadingToast {
+	width: @toastWidth;
+	min-height: @toastMinHidth;
+	background: @defaultBgColor;
+    text-align: center;
+    border-radius: @borderRadius;
+    color: #FFFFFF;
+    display: none;
+}
+.lDialog-LoadingToast .loading {margin: 30px 0 5px 0;}
+.lDialog-LoadingToast .loading img { 
+	width: 35px; 
+	height: 35px; 
+	animation:rotating 3s linear infinite;
+}
+@keyframes rotating{
+	from{transform:rotate(0)}
+	to{transform:rotate(360deg)}
+}

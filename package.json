@@ -1,0 +1,28 @@
+{
+  "name": "lDialog",
+  "version": "1.0.0",
+  "description": "lDialog-会话框，依赖jquery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evinLiang/lDialog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evinLiang/lDialog/issues"
+  },
+  "homepage": "https://github.com/evinLiang/lDialog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-connect": "^5.5.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-less": "^3.5.0"
+  }
+}
