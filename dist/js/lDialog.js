@@ -31,7 +31,7 @@
             duration = req.duration || 2500,           //toast显示时间,默认2秒
             icon = req.icon || "success";              //icon类型，默认为"success"，一共有2种,icon:["success","error"]
             theme = req.theme || "default";            //主题颜色,一共有7种,theme:["default","primary","link","success","info","warning","danger"]
-            $("body").append("<div class='lDialog lDialog-iconToast "+theme+"'><div class='iconToast-icon "+icon+"'><img src='"+icon+".png' alt=''></div><p class='iconToast-text'>"+title+"</p></div>"); //显示toast
+            $("body").append("<div class='lDialog lDialog-iconToast "+theme+"'><div class='iconToast-icon "+icon+"'><img src='http://pbox1mnpt.bkt.clouddn.com/"+icon+".png' alt=''></div><p class='iconToast-text'>"+title+"</p></div>"); //显示toast
             $(".lDialog-iconToast").fadeIn(500);
 
             //显示后关闭toast
@@ -49,7 +49,7 @@
             } 
             var title = req.title || "加载中",   //toast标题，默认"加载中"
             theme = req.theme || "default";            //主题颜色,一共有7种,theme:["default","primary","link","success","info","warning","danger"]
-            $("body").append("<div class='lDialog lDialog-LoadingToast "+theme+"'><div class='loading'><img src='loading.png' alt=''></div><p class='iconToast-text'>"+title+"</p></div>"); //显示toast
+            $("body").append("<div class='lDialog lDialog-LoadingToast "+theme+"'><div class='loading'><img src='http://pbox1mnpt.bkt.clouddn.com/loading.png' alt=''></div><p class='iconToast-text'>"+title+"</p></div>"); //显示toast
             $(".lDialog-LoadingToast").fadeIn(500);
         },
 
