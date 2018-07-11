@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var less  = require('gulp-less');		//less
 var cssmin = require('gulp-cssmin');	//压缩css
+var uglify = require('gulp-uglify');	//js压缩
 var connect = require("gulp-connect");  //server
 var autoprefixer = require('gulp-autoprefixer'); //兼容css浏览器前缀
 var ext_replace = require('gulp-ext-replace');	//
@@ -25,14 +26,17 @@ gulp.task('cssmin', ["less"], function () {
 //watch监听less有变化，就执行['cssmin']
 gulp.task('watch',function(){
     gulp.watch('./src/less/*.less',['cssmin']);
-    gulp.watch('./src/js/*.js',['js']);
+    gulp.watch('./src/js/*.js',['jsmin']);
 })
 
-//出来js文件
-gulp.task('js',function(){
-    gulp.src('./src/js/lDialog.js')
-    .pipe(gulp.dest('./dist/js/'));
-})
+//js压缩
+gulp.task('jsmin', function () {
+    gulp.src('./src/js/*.js')
+    .pipe(gulp.dest('./dist/js/'))
+        .pipe(uglify())
+        .pipe(ext_replace('.min.js'))
+        .pipe(gulp.dest('./dist/js/'));
+});
 
 gulp.task('default', function () {
   console.log(1);
