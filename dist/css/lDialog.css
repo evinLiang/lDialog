@@ -1,6 +1,6 @@
 .lDialog {
   position: fixed;
-  z-index: 999999;
+  z-index: 9999;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -38,7 +38,7 @@
   background: rgba(17, 17, 17, 0.7);
   border-radius: 5px;
   font-size: 13px;
-  color: #fff;
+  color: #ffffff;
   min-width: 120px;
   max-width: 200px;
   padding: 10px 0px;
@@ -52,7 +52,7 @@
   background: rgba(17, 17, 17, 0.7);
   text-align: center;
   border-radius: 5px;
-  color: #FFFFFF;
+  color: #ffffff;
   display: none;
 }
 .lDialog-iconToast .iconToast-icon img {
@@ -77,17 +77,17 @@
   background: rgba(17, 17, 17, 0.7);
   text-align: center;
   border-radius: 5px;
-  color: #FFFFFF;
+  color: #ffffff;
   display: none;
 }
 .lDialog-LoadingToast .loading {
-  margin: 30px 0 5px 0;
+  margin: 20px 0 10px 0;
 }
 .lDialog-LoadingToast .loading img {
-  width: 35px;
-  height: 35px;
-  -webkit-animation: rotating 3s linear infinite;
-          animation: rotating 3s linear infinite;
+  width: 42px;
+  height: 42px;
+  -webkit-animation: rotating 1.5s linear infinite;
+          animation: rotating 1.5s linear infinite;
 }
 @-webkit-keyframes rotating {
   from {
@@ -108,4 +108,84 @@
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+/*--========= S lmodal 模态框 =========--*/
+.lModal-box {
+  display: none;
+}
+.lMask {
+  position: fixed;
+  z-index: 9998;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.7);
+}
+.lDialog-Modal {
+  background: #ffffff;
+  text-align: center;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 5px;
+}
+.lDialog-Modal-title {
+  font-size: 18px;
+  padding: 1.3em 1.6em 0.5em;
+  color: #353535;
+}
+.lDialog-Modal-content:first-child {
+  padding: 2.7em 20px 1.7em;
+}
+.lDialog-Modal-content {
+  padding: 0 1.6em 0.8em;
+  color: #999;
+}
+.lDialog-Modal-footer {
+  position: relative;
+  line-height: 48px;
+  font-size: 18px;
+  color: #353535;
+}
+.lDialog-Modal-btn {
+  display: flex;
+  text-align: center;
+}
+.lDialog-Modal-btn a {
+  flex: 1;
+  text-decoration: none;
+  color: #353535;
+}
+.lDialog-Modal-btn a.lBtn {
+  color: #999;
+  position: relative;
+}
+.lDialog-Modal-btn a.lBtn::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 48px;
+  border-right: 1px solid #D5D5D6;
+  color: #D5D5D6;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+          transform: scaleX(0.5);
+}
+.lDialog-Modal-footer::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid #D5D5D6;
+  color: #D5D5D6;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
 }

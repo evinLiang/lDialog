@@ -9,7 +9,7 @@ var webserver = require('gulp-webserver'); // 本地服务器
 
 //lDialog.less文件处理后保存到，./dist/css 文件夹下
 gulp.task('less', function () {
-	return gulp.src('./src/less/lDialog.less')
+	return gulp.src('./src/less/*.less')
 	.pipe(less())
   .pipe(autoprefixer())
 	.pipe(gulp.dest('./dist/css/'));
@@ -43,8 +43,14 @@ gulp.task('jsmin', function () {
 gulp.task('webserver', function() {
   gulp.src( './' ) // 服务器目录（代表根目录）
   .pipe(webserver({
-    livereload: true,
+    livereload: true,       // 启用LiveReload，去掉f5刷新的痛点
+    host:'192.168.2.230',   // host
+    open: true,             // 服务器启动时自动打开网页
+    port:'8001'             // 端口
   }));
 });
 
-gulp.task('default',['webserver','watch']);
+//开始任务
+gulp.task('default', function(){
+  gulp.start('webserver', 'watch');
+});

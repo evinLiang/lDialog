@@ -9,10 +9,11 @@
 @borderRadius:5px;
 @toastWidth:120px;
 @toastMinHidth:120px;
+@toastColor:#ffffff;
 
 .lDialog {
 	position: fixed;
-	z-index: 999999;
+	z-index: 9999;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
@@ -32,7 +33,7 @@
 	background: @defaultBgColor;
 	border-radius: @borderRadius;
 	font-size: 13px;
-	color: #fff;
+	color: @toastColor;
 	min-width: @toastWidth;
 	max-width: 200px;
 	padding: 10px 0px;
@@ -47,7 +48,7 @@
 	background: @defaultBgColor;
     text-align: center;
     border-radius: @borderRadius;
-    color: #FFFFFF;
+    color: @toastColor;
     display: none;
 }
 .lDialog-iconToast .iconToast-icon img { max-width: 100%; }
@@ -63,16 +64,91 @@
 	background: @defaultBgColor;
     text-align: center;
     border-radius: @borderRadius;
-    color: #FFFFFF;
+    color: @toastColor;
     display: none;
 }
-.lDialog-LoadingToast .loading {margin: 30px 0 5px 0;}
+.lDialog-LoadingToast .loading {margin: 20px 0 10px 0;}
 .lDialog-LoadingToast .loading img { 
-	width: 35px; 
-	height: 35px; 
-	animation:rotating 3s linear infinite;
+	width: 42px; 
+	height: 42px; 
+	animation:rotating 1.5s linear infinite;
 }
 @keyframes rotating{
 	from{transform:rotate(0)}
 	to{transform:rotate(360deg)}
+}
+
+/*--========= S lmodal 模态框 =========--*/
+.lModal-box { display: none; }
+.lMask {
+	position: fixed;
+	z-index: 9998;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	background: rgba(0,0,0,0.7);
+}
+.lDialog-Modal {
+	background: #ffffff;
+	text-align: center;
+	width: 80%;
+    max-width: 300px;
+    border-radius: @borderRadius;
+}
+.lDialog-Modal-title {
+	font-size: 18px;
+    padding: 1.3em 1.6em 0.5em;
+    color: #353535;
+}
+.lDialog-Modal-content:first-child {
+	padding: 2.7em 20px 1.7em;
+}
+.lDialog-Modal-content {
+	padding: 0 1.6em 0.8em;
+	color: #999;
+}
+.lDialog-Modal-footer {
+	position: relative;
+	line-height: 48px;
+	font-size: 18px;
+	color: #353535;
+}
+.lDialog-Modal-btn {
+	display: flex;
+	text-align: center;
+}
+.lDialog-Modal-btn a {
+	flex: 1;
+	text-decoration: none;
+	color: #353535;
+}
+.lDialog-Modal-btn a.lBtn {
+	color: #999;
+	position: relative;
+}
+.lDialog-Modal-btn a.lBtn::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 48px;
+    border-right: 1px solid #D5D5D6;
+    color: #D5D5D6;
+    transform-origin: 0 0;
+    transform: scaleX(0.5); 	
+}
+.lDialog-Modal-footer::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #D5D5D6;
+    color: #D5D5D6;
+    transform-origin: 0 0;
+    transform: scaleY(0.5); 
 }

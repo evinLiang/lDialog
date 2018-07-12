@@ -4,29 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="./dist/css/lDialog.css">
+    <link rel="stylesheet" href="./dist/css/demo.css">
     <title>lDialog</title>
-    <style>
-        body { background: #eee; }
-        button {
-            border: none;
-            border-radius: 5px;
-            height: 35px;
-            line-height: 35px;
-            padding: 0px 10px;
-            cursor: pointer;
-            background: rgba(32,156,238,0.7);
-            box-sizing: 0px 0px 5px rgba(32,156,238,0.4);
-            color: #fff;
-        }
-    </style>
   </head>
-  <body>
+  <body>  
     <div id="app">
-        <h3>dialog演示</h3>
-        <hr>
+        <h3>lDialog演示</h3>
     	<button id="toast">toast</button>
         <button id="iconToast">iconToast</button>
         <button id="loadingToast">loadingToast</button>
+        <button id="lDialogModal">lDialogModal</button>
+        <button id="lDialogBtnModal">lDialogBtnModal</button>
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="./dist/js/lDialog.js"></script>
@@ -40,7 +28,7 @@
     			theme:'default'
     		});
     	});
-        $("#iconToast").click(function(event) {
+        $("#iconToast").click(function() {
             
             //显示iconTiast，类型有：success,error
             $.lDialog.iconToast({
@@ -50,7 +38,7 @@
                 duration: 2000
             })
         });
-        $("#loadingToast").click(function(event) {
+        $("#loadingToast").click(function() {
             
             //显示sLoadingToast
             $.lDialog.sLoadingToast({
@@ -63,7 +51,25 @@
                 $.lDialog.hLoadingToast() //关闭sLoadingToast
             },2000)
         });
-
+        $("#lDialogModal").click(function() {
+            
+            //显示模态框
+            $.lDialog.modal({
+                title:'温馨提示',
+                content:'我是内容',
+                footerText:'好的'
+            })
+        });
+        $("#lDialogBtnModal").click(function() {
+            
+            //显示按钮模态框
+            $.lDialog.btnModal({
+                title:'温馨提示',
+                content:'我是内容'
+            },function(){   //点击确认按钮之后执行
+                console.log("按了执行按钮");
+            })
+        });
     </script>
   </body>
 </html>

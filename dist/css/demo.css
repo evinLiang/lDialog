@@ -1,0 +1,29 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background: #f8f8f8;
+  margin: 0px;
+  padding: 0px;
+}
+#app {
+  padding: 16px 16px;
+}
+h3 {
+  margin-bottom: 20px;
+}
+button {
+  width: 100%;
+  height: 47px;
+  line-height: 47px;
+  border: none;
+  border-radius: 5px;
+  padding: 0px 10px;
+  cursor: pointer;
+  background: #209cee;
+  box-sizing: 0px 0px 5px rgba(32, 156, 238, 0.4);
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
